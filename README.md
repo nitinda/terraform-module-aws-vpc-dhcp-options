@@ -48,13 +48,11 @@ _To use this module, add the following call to your code:_
 - **_Sample Code:_**
 
 ```tf
-module "eip" {
+module "vpc_dhcp_options" {
   source = "git::https://github.com/nitinda/terraform-module-aws-vpc-dhcp-options.git?ref=master"
 
-  vpc                       = true
-  network_interface         = "${aws_network_interface.multi-ip.id}"
-  associate_with_private_ip = "10.0.0.10"
-  tags                      = {
+  domain_name_servers = ["8.8.8.8", "8.8.4.4"]
+  tags                = {
     Environment = "prod"
     Project     = "POC"
   }
@@ -63,11 +61,15 @@ module "eip" {
 ```
 
 ```tf
-module "eip" {
+module "vpc_dhcp_options" {
   source = "git::https://github.com/nitinda/terraform-module-aws-vpc-dhcp-options.git?ref=master"
 
-  vpc  = true
-  tags = {
+  domain_name          = "service.consul"
+  domain_name_servers  = ["127.0.0.1", "10.0.0.2"]
+  ntp_servers          = ["127.0.0.1"]
+  netbios_name_servers = ["127.0.0.1"]
+  netbios_node_type    = 2
+  tags                 = {
     Environment = "prod"
     Project     = "POC"
   }
@@ -75,19 +77,6 @@ module "eip" {
 
 ```
 
-```tf
-module "eip" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-vpc-dhcp-options.git?ref=master"
-
-  instance = aws_instance.web.id
-  vpc      = true
-  tags     = {
-    Environment = "prod"
-    Project     = "POC"
-  }
-}
-
-```
 
 ---
 
