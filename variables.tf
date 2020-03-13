@@ -5,7 +5,6 @@ variable "tags" {
 
 variable "domain_name" {
   description = "the suffix domain name to use by default when resolving non Fully Qualified Domain Names"
-  type        = bool
   default     = null
 }
 
