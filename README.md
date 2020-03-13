@@ -103,8 +103,7 @@ _The variables required in order for the module to be successfully called from t
 _This module has the following outputs:_
 
 * **_id_**
-* **_public\_ip_**
-* **_public\_dns_**
+
 
 ---
 
