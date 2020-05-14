@@ -7,10 +7,13 @@ _Terraform module for_ **_AWS VPC DHCP Options_**
 
 ![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
 
+> **_This is a stable example. It should successfully build out of the box_**
 >
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
 
 ---
 <!--END STABILITY BANNER-->
+
 
 ## _General_
 
@@ -82,13 +85,13 @@ module "vpc_dhcp_options" {
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
-|:----|:----|-----:|:---:|
-| **_domain\_name_** | _the suffix domain name to use by default when <br/> resolving non Fully Qualified Domain Names_ | _bool_ | **_Optional <br/> (Default - null)_** |
-| **_domain\_name\_servers_** | _List of name servers to configure in /etc/resolv.conf_ | _list(string)_ | **_Optional <br/> (Default - ["AmazonProvidedDNS"])_** |
-| **_ntp\_servers_** | _List of NTP servers to configure_ | _list(string)_ | **_Optional <br/> (Default - [])_** |
-| **_netbios\_name\_servers_** | _The NetBIOS node type_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|:---:|:---:|
+| **_domain\_name_** | _the suffix domain name to use by default when <br/> resolving non Fully Qualified Domain Names_ | _bool_ | **_Optional_** | **_null_** |
+| **_domain\_name\_servers_** | _List of name servers to configure in /etc/resolv.conf_ | _list(string)_ | **_Optional_** | **_["AmazonProvidedDNS"]_** |
+| **_ntp\_servers_** | _List of NTP servers to configure_ | _list(string)_ | **_Optional_** | **_[]_** |
+| **_netbios\_name\_servers_** | _The NetBIOS node type_ | _string_ | **_Optional_** | **_null_** |
+| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 
 ---
